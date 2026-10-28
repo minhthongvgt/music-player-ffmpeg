@@ -1,0 +1,88 @@
+name: Build FFmpeg (LGPL)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ['v*']
+    paths:
+      - scripts/ffmpeg/**
+      - .github/workflows/build-ffmpeg.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ninja-build
+
+      - name: Install Android NDK
+        run: |
+          NDK_VERSION="$(sed -n 's/^NDK_VERSION="\(.*\)"$/\1/p' scripts/ffmpeg/build.sh)"
+          test -n "$NDK_VERSION"
+          if [ ! -f "$ANDROID_HOME/ndk/$NDK_VERSION/source.properties" ]; then
+            yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "ndk;$NDK_VERSION" > /dev/null
+          fi
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/$NDK_VERSION" >> "$GITHUB_ENV"
+
+      - name: Build FFmpeg + JNI
+        env:
+          WORK_DIR: ${{ runner.temp }}/ffmpeg-work
+          OUT_DIR: ${{ github.workspace }}/out/jniLibs
+        run: |
+          mkdir -p "$WORK_DIR"
+          bash scripts/ffmpeg/build.sh
+
+      - name: Check 16 KB page alignment
+        run: |
+          for so in out/jniLibs/*/libffmpegJNI.so; do
+            align=$(objdump -p "$so" | awk '/LOAD/ {print $NF; exit}')
+            echo "$so: $align"
+            case "$align" in 2\*\*1[4-9]) ;; *) echo "Not 16 KB aligned"; exit 1 ;; esac
+          done
+
+      - name: Package corresponding source
+        env:
+          WORK_DIR: ${{ runner.temp }}/ffmpeg-work
+        run: |
+          FFMPEG_COMMIT="$(sed -n 's/^FFMPEG_COMMIT="\(.*\)"$/\1/p' scripts/ffmpeg/build.sh)"
+          MODULE="$WORK_DIR/media/libraries/decoder_ffmpeg"
+          MEDIA3_COMMIT="$(git -C "$WORK_DIR/media" rev-parse HEAD)"
+          mkdir -p out/dist
+          git -C "$MODULE/src/main/jni/ffmpeg" archive --format=tar.gz --prefix="ffmpeg-$FFMPEG_COMMIT/" HEAD \
+            > "out/dist/ffmpeg-$FFMPEG_COMMIT.tar.gz"
+          tar -czf "out/dist/media3-decoder_ffmpeg-$MEDIA3_COMMIT.tar.gz" \
+            -C "$WORK_DIR/media/libraries" --exclude=decoder_ffmpeg/src/main/jni/ffmpeg --exclude='*.bak' decoder_ffmpeg
+          tar -czf out/dist/build-scripts.tar.gz scripts LICENSE COPYING.LGPLv2.1 README.md
+          (cd out && zip -qr dist/libffmpegJNI.zip jniLibs)
+          cp out/jniLibs/BUILD_INFO.txt out/dist/
+          ls -la out/dist
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ffmpeg-jniLibs
+          path: out/jniLibs
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: corresponding-source
+          path: out/dist
+          if-no-files-found: error
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" out/dist/* \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file out/dist/BUILD_INFO.txt
