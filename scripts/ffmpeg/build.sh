@@ -6,7 +6,7 @@ FFMPEG_BRANCH="release/6.0"
 FFMPEG_COMMIT="573f2b81ebd97da81def2ba762e81b0328547004"
 NDK_VERSION="30.0.16248370"
 ANDROID_API=26
-DECODERS=(mp1 mp2 mp3 ac3 truehd mlp dca vorbis opus flac alac pcm_mulaw pcm_alaw
+DECODERS=(mp1 mp2 mp3 ac3 vorbis opus flac alac pcm_mulaw pcm_alaw
   mpeg1video mpeg2video mpeg4 h263 vp8 vp9 mjpeg)
 ABIS=(armeabi-v7a arm64-v8a x86 x86_64)
 
