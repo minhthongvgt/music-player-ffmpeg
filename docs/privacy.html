@@ -28,15 +28,16 @@ hr{display:none}
 <body>
 <main>
 <h1>Chính sách quyền riêng tư / Privacy Policy</h1>
-<p class="meta"><strong>Music Player</strong> · Ngày hiệu lực / Effective date: 2026-10-28</p>
+<p class="meta"><strong>Music Player</strong> (com.thong.musicplayer) · Phiên bản / Version: 2026-10-28 · Ngày hiệu lực / Effective date: 2026-10-28</p>
 <p class="lang"><a href="#vi">Tiếng Việt</a> · <a href="#en">English</a></p>
 <section lang="vi" id="vi">
 <h2>Tiếng Việt</h2>
 <h3>1. Tóm tắt</h3>
-<p>Music Player ("Ứng dụng") do Nguyễn Minh Thông ("Chủ sở hữu") phát triển. Ứng dụng <strong>không thu thập, không lưu trên máy chủ và không chia sẻ</strong> dữ liệu cá nhân của bạn. Mọi xử lý diễn ra trên thiết bị của bạn.</p>
+<p>Chính sách quyền riêng tư này áp dụng cho ứng dụng Music Player cho Android (com.thong.musicplayer, "Ứng dụng") do Nguyễn Minh Thông ("Chủ sở hữu") phát triển và phát hành trên Google Play. Ứng dụng <strong>không thu thập, không lưu trên máy chủ (trừ Auto Backup của Android, mục 5) và không chia sẻ</strong> dữ liệu cá nhân của bạn. Mọi xử lý diễn ra trên thiết bị của bạn. Chủ sở hữu chỉ nhận dữ liệu cá nhân khi bạn chủ động gửi email (mục 8).</p>
+<p>Văn bản này có bản tiếng Việt và tiếng Anh. Nếu có khác biệt, bản tiếng Việt được ưu tiên, trừ khi bản khác có lợi hơn cho người tiêu dùng.</p>
 <h3>2. Dữ liệu không thu thập</h3>
 <ul>
-<li>Ứng dụng không có quyền truy cập Internet (<code>INTERNET</code>) và không gửi dữ liệu nào ra khỏi thiết bị.</li>
+<li>Ứng dụng không gửi dữ liệu cá nhân của bạn ra khỏi thiết bị. Khi Ứng dụng cung cấp tính năng Premium mua qua Google Play, việc mua hàng do Google Play xử lý.</li>
 <li>Ứng dụng không dùng công cụ quảng cáo, phân tích, theo dõi hay báo cáo sự cố của bên thứ ba.</li>
 <li>Ứng dụng không yêu cầu tài khoản và không thu thập tên, email, danh bạ, vị trí hay mã định danh thiết bị.</li>
 </ul>
@@ -45,45 +46,61 @@ hr{display:none}
 <th>Quyền</th><th>Mục đích</th>
 </tr></thead><tbody>
 <tr><td><code>READ_MEDIA_AUDIO</code>, <code>READ_MEDIA_VIDEO</code> (Android 13 trở lên); <code>READ_EXTERNAL_STORAGE</code> (Android 12 trở xuống)</td><td>Tìm và phát các tệp nhạc, video trên thiết bị; đọc thông tin bài hát, ảnh bìa, lời bài hát trong tệp</td></tr>
-<tr><td><code>WRITE_EXTERNAL_STORAGE</code> (chỉ Android 9 trở xuống)</td><td>Lưu thông tin bài hát bạn sửa và đoạn nhạc chuông bạn cắt</td></tr>
+<tr><td><code>WRITE_EXTERNAL_STORAGE</code> (chỉ Android 9 trở xuống)</td><td>Lưu thông tin bài hát bạn sửa và đoạn nhạc chuông bạn cắt, và xóa bài bạn chọn</td></tr>
 <tr><td><code>WRITE_SETTINGS</code></td><td>Chỉ dùng khi bạn chọn đặt một bài làm nhạc chuông, âm báo thông báo hoặc báo thức. Bạn cấp quyền này trong Cài đặt của Android</td></tr>
 <tr><td><code>POST_NOTIFICATIONS</code></td><td>Hiện thông báo điều khiển phát nhạc</td></tr>
 <tr><td><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>, <code>WAKE_LOCK</code></td><td>Tiếp tục phát khi Ứng dụng chạy nền hoặc màn hình tắt</td></tr>
 <tr><td><code>MODIFY_AUDIO_SETTINGS</code></td><td>Bộ cân bằng và đầu ra âm thanh</td></tr>
-<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Do thư viện phát nhạc (Media3) thêm vào, chỉ để kiểm tra trạng thái mạng. Ứng dụng không có quyền Internet nên không kết nối mạng</td></tr>
+<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Do thư viện phát nhạc (Media3) thêm vào, chỉ để kiểm tra trạng thái mạng. Ứng dụng không dùng quyền này để gửi dữ liệu của bạn</td></tr>
 <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Do thư viện widget (Glance, WorkManager) thêm vào, để khôi phục widget và tác vụ nền sau khi khởi động lại thiết bị</td></tr>
 </tbody></table></div>
-<p>Ứng dụng chỉ đọc và sửa tệp media khi bạn yêu cầu. Thư mục do bạn chọn thêm được truy cập qua cơ chế chọn thư mục của Android và bạn có thể thu hồi quyền bất kỳ lúc nào.</p>
+<p>Ứng dụng chỉ đọc, sửa hoặc xóa tệp media khi bạn yêu cầu và xác nhận. Thư mục do bạn chọn thêm được truy cập qua cơ chế chọn thư mục của Android và bạn có thể thu hồi quyền bất kỳ lúc nào.</p>
 <h3>4. Dữ liệu lưu cục bộ</h3>
 <p>Các dữ liệu sau chỉ được lưu trong bộ nhớ riêng của Ứng dụng trên thiết bị:</p>
 <ul>
 <li>cài đặt (giao diện, âm thanh, bộ cân bằng, hẹn giờ…);</li>
 <li>danh sách phát, bài yêu thích, lịch sử phát;</li>
 <li>hàng đợi và vị trí đang phát;</li>
-<li>bộ nhớ đệm (danh sách tệp đã quét, ảnh bìa, ảnh thu nhỏ video, thông số âm lượng).</li>
+<li>bộ nhớ đệm (danh sách tệp đã quét, ảnh bìa, ảnh thu nhỏ video, thông số âm lượng);</li>
+<li>trạng thái mua Premium, khi Ứng dụng cung cấp tính năng Premium (mục 6).</li>
 </ul>
-<p>Bạn có thể xóa toàn bộ dữ liệu này bằng cách xóa dữ liệu Ứng dụng trong Cài đặt của Android hoặc gỡ Ứng dụng. Ứng dụng không xóa hay gửi tệp media của bạn đi đâu.</p>
+<p>Ứng dụng không gửi tệp media của bạn đi đâu.</p>
 <h3>5. Sao lưu của Android</h3>
 <p>Ứng dụng cho phép tính năng sao lưu tự động của Android (Auto Backup) và chuyển dữ liệu giữa các thiết bị. Nếu bạn bật sao lưu trên thiết bị, Android có thể sao lưu cài đặt, danh sách phát, bài yêu thích và lịch sử phát vào tài khoản Google của bạn theo chính sách của Google. Hàng đợi, vị trí đang phát, bộ nhớ đệm và trạng thái widget được loại khỏi bản sao lưu. Chủ sở hữu không truy cập được các bản sao lưu này. Bạn có thể tắt sao lưu trong Cài đặt của Android.</p>
 <h3>6. Mua hàng trong ứng dụng</h3>
-<p>Nếu Ứng dụng có tính năng trả phí, giao dịch được Google Play xử lý theo Chính sách quyền riêng tư của Google. Chủ sở hữu không nhận thông tin thanh toán của bạn; Ứng dụng chỉ nhận từ Google Play kết quả giao dịch cần để mở khóa tính năng đã mua.</p>
-<h3>7. Trẻ em</h3>
-<p>Ứng dụng không hướng tới trẻ em dưới 13 tuổi và không cố ý thu thập dữ liệu của bất kỳ ai, kể cả trẻ em.</p>
-<h3>8. Thay đổi chính sách</h3>
-<p>Chính sách này có thể được cập nhật. Bản mới có hiệu lực từ ngày ghi ở đầu văn bản và được đăng tại cùng địa chỉ này. Nếu Ứng dụng bắt đầu thu thập dữ liệu, chính sách sẽ được cập nhật trước khi thay đổi đó có hiệu lực.</p>
-<h3>9. Liên hệ</h3>
+<p>Khi Ứng dụng cung cấp tính năng Premium mua qua Google Play, giao dịch do Google Play xử lý theo Chính sách quyền riêng tư của Google. Chủ sở hữu không nhận thông tin thanh toán của bạn. Ứng dụng nhận từ Google Play mã giao dịch và trạng thái mua để mở khóa Premium. Thông tin này chỉ lưu trên thiết bị và không gửi cho Chủ sở hữu. Chủ sở hữu có thể thấy trong Google Play Console các báo cáo giao dịch do Google cung cấp (ví dụ mã đơn hàng, quốc gia, số tiền) theo chính sách của Google.</p>
+<h3>7. Báo cáo sự cố của Android và Google Play</h3>
+<p>Nếu bạn cho phép, Android/Google Play có thể gửi báo cáo sự cố ẩn danh cho Google. Chủ sở hữu có thể xem bản tổng hợp các báo cáo đó trong Google Play Console. Ứng dụng không tự gửi báo cáo này.</p>
+<h3>8. Khi bạn liên hệ</h3>
+<p>Nếu bạn gửi email, Chủ sở hữu nhận địa chỉ email, tên hiển thị, nội dung và tệp đính kèm bạn cung cấp (kể cả thông tin thiết bị nếu bạn tự gửi), chỉ để trả lời, hỗ trợ bạn và xử lý yêu cầu (ví dụ hoàn tiền, yêu cầu mã nguồn). Dữ liệu này không dùng cho quảng cáo, không bán hay chia sẻ, trừ khi pháp luật yêu cầu. Email được lưu trên dịch vụ thư điện tử của nhà cung cấp (Google Gmail), có thể đặt ở ngoài nước bạn cư trú.</p>
+<p>Căn cứ xử lý: sự đồng ý của bạn khi chủ động gửi email, theo Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 và Nghị định số 356/2025/NĐ-CP. Với người dùng ở EU/EEA/Vương quốc Anh, theo GDPR: Điều 6(1)(b) khi yêu cầu liên quan đến giao dịch mua của bạn, và Điều 6(1)(f) (lợi ích chính đáng trong việc trả lời bạn) với các trường hợp khác. Chủ sở hữu là bên kiểm soát dữ liệu.</p>
+<h3>9. Bảo mật</h3>
+<p>Dữ liệu của Ứng dụng nằm trong bộ nhớ riêng của Ứng dụng trên thiết bị, được Android bảo vệ khỏi các ứng dụng khác. Ứng dụng không gửi dữ liệu cá nhân của bạn qua mạng. Khi Ứng dụng cung cấp tính năng Premium mua qua Google Play, việc mua hàng do Google Play xử lý. Email bạn gửi cho Chủ sở hữu được lưu trong hộp thư có bật xác thực hai lớp và chỉ Chủ sở hữu truy cập.</p>
+<h3>10. Lưu giữ và xóa</h3>
 <ul>
-<li>GitHub: <a href="https://github.com/minhthongvgt/music-player-ffmpeg/issues">https://github.com/minhthongvgt/music-player-ffmpeg/issues</a></li>
-<li>Email: <a href="mailto:minhthongtinhyeu@gmail.com">minhthongtinhyeu@gmail.com</a></li>
+<li>Dữ liệu trên thiết bị được giữ cho đến khi bạn xóa dữ liệu Ứng dụng trong Cài đặt của Android hoặc gỡ Ứng dụng. Trạng thái mua Premium (nếu có) có thể được khôi phục lại từ Google Play.</li>
+<li>Email liên hệ được giữ tối đa 24 tháng kể từ lần trao đổi cuối, hoặc xóa sớm hơn khi bạn yêu cầu, trừ khi pháp luật yêu cầu giữ lâu hơn (ví dụ chứng từ liên quan đến hoàn tiền).</li>
+</ul>
+<h3>11. Quyền của bạn</h3>
+<p>Với dữ liệu bạn gửi qua email, bạn có quyền được biết, truy cập, chỉnh sửa, xóa dữ liệu, hạn chế hoặc phản đối việc xử lý, rút lại đồng ý và nhận bản sao dữ liệu, theo Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, Nghị định số 356/2025/NĐ-CP và GDPR (nếu bạn ở EU/EEA/Vương quốc Anh). Gửi yêu cầu tới email ở mục 14; Chủ sở hữu trả lời trong thời hạn pháp luật quy định (với GDPR, trong vòng một tháng). Bạn có quyền khiếu nại tới cơ quan có thẩm quyền về bảo vệ dữ liệu cá nhân tại Việt Nam (Bộ Công an) hoặc cơ quan giám sát bảo vệ dữ liệu nơi bạn cư trú hoặc làm việc (nếu bạn ở EU/EEA/Vương quốc Anh).</p>
+<h3>12. Trẻ em</h3>
+<p>Ứng dụng không hướng tới trẻ em (dưới 13 tuổi ở Hoa Kỳ, dưới 16 tuổi theo pháp luật Việt Nam và một số nước EU) và không thu thập dữ liệu của bất kỳ ai, kể cả trẻ em.</p>
+<h3>13. Thay đổi chính sách</h3>
+<p>Chính sách này có thể được cập nhật. Bản mới có hiệu lực từ ngày ghi ở đầu văn bản và được đăng tại cùng địa chỉ này. Thay đổi quan trọng sẽ được thông báo trong Ứng dụng hoặc ghi chú phát hành trên Google Play. Nếu Ứng dụng bắt đầu thu thập dữ liệu, chính sách sẽ được cập nhật trước khi thay đổi đó có hiệu lực.</p>
+<h3>14. Liên hệ</h3>
+<ul>
+<li>Đầu mối liên hệ về quyền riêng tư: Nguyễn Minh Thông, email <a href="mailto:minhthongtinhyeu@gmail.com">minhthongtinhyeu@gmail.com</a></li>
+<li>GitHub (chỉ dành cho câu hỏi về mã nguồn FFmpeg): <a href="https://github.com/minhthongvgt/music-player-ffmpeg/issues">https://github.com/minhthongvgt/music-player-ffmpeg/issues</a></li>
 </ul>
 </section>
 <section lang="en" id="en">
 <h2>English</h2>
 <h3>1. Summary</h3>
-<p>Music Player (the "App") is developed by Nguyễn Minh Thông (the "Owner"). The App <strong>does not collect, store on servers or share</strong> your personal data. All processing happens on your device.</p>
+<p>This privacy policy applies to the Music Player application for Android (com.thong.musicplayer, the "App"), developed and published on Google Play by Nguyễn Minh Thông (the "Owner"). The App <strong>does not collect, store on servers (except Android Auto Backup, section 5) or share</strong> your personal data. All processing happens on your device. The Owner receives personal data only when you choose to send an email (section 8).</p>
+<p>This policy is provided in Vietnamese and English. In case of discrepancy, the Vietnamese version prevails, unless the other version is more favorable to the consumer.</p>
 <h3>2. Data not collected</h3>
 <ul>
-<li>The App does not have Internet access (<code>INTERNET</code> permission) and does not send any data off your device.</li>
+<li>The App does not send your personal data off your device. When the App offers Premium features purchased through Google Play, purchases are handled by Google Play.</li>
 <li>The App does not use third-party advertising, analytics, tracking or crash reporting tools.</li>
 <li>The App does not require an account and does not collect your name, email, contacts, location or device identifiers.</li>
 </ul>
@@ -92,36 +109,51 @@ hr{display:none}
 <th>Permission</th><th>Purpose</th>
 </tr></thead><tbody>
 <tr><td><code>READ_MEDIA_AUDIO</code>, <code>READ_MEDIA_VIDEO</code> (Android 13 and later); <code>READ_EXTERNAL_STORAGE</code> (Android 12 and earlier)</td><td>Find and play music and video files on your device; read song information, cover art and lyrics stored in the files</td></tr>
-<tr><td><code>WRITE_EXTERNAL_STORAGE</code> (Android 9 and earlier only)</td><td>Save song information you edit and ringtone clips you cut</td></tr>
+<tr><td><code>WRITE_EXTERNAL_STORAGE</code> (Android 9 and earlier only)</td><td>Save song information you edit and ringtone clips you cut, and delete songs you choose</td></tr>
 <tr><td><code>WRITE_SETTINGS</code></td><td>Used only when you choose to set a song as ringtone, notification sound or alarm. You grant it in Android Settings</td></tr>
 <tr><td><code>POST_NOTIFICATIONS</code></td><td>Show the playback control notification</td></tr>
 <tr><td><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>, <code>WAKE_LOCK</code></td><td>Keep playing while the App is in the background or the screen is off</td></tr>
 <tr><td><code>MODIFY_AUDIO_SETTINGS</code></td><td>Equalizer and audio output</td></tr>
-<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Added by the playback library (Media3), only to check the network state. The App has no Internet permission and does not connect to any network</td></tr>
+<tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Added by the playback library (Media3), only to check the network state. The App does not use it to send your data</td></tr>
 <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Added by the widget libraries (Glance, WorkManager), to restore the widget and background tasks after the device restarts</td></tr>
 </tbody></table></div>
-<p>The App reads and modifies media files only when you ask it to. Folders you add are accessed through the Android folder picker, and you can revoke that access at any time.</p>
+<p>The App reads, modifies or deletes media files only when you ask for it and confirm. Folders you add are accessed through the Android folder picker, and you can revoke that access at any time.</p>
 <h3>4. Data stored locally</h3>
 <p>The following data is stored only in the App's private storage on your device:</p>
 <ul>
 <li>settings (appearance, audio, equalizer, sleep timer…);</li>
 <li>playlists, favorites and play history;</li>
 <li>the playback queue and position;</li>
-<li>caches (list of scanned files, cover art, video thumbnails, loudness data).</li>
+<li>caches (list of scanned files, cover art, video thumbnails, loudness data);</li>
+<li>the Premium purchase state, when the App offers Premium features (section 6).</li>
 </ul>
-<p>You can delete all of this data by clearing the App's data in Android Settings or by uninstalling the App. The App does not delete your media files or send them anywhere.</p>
+<p>The App does not send your media files anywhere.</p>
 <h3>5. Android backup</h3>
 <p>The App allows Android Auto Backup and device-to-device transfer. If backup is enabled on your device, Android may back up your settings, playlists, favorites and play history to your Google account under Google's policies. The playback queue, position, caches and widget state are excluded from backup. The Owner cannot access these backups. You can turn backup off in Android Settings.</p>
 <h3>6. In-app purchases</h3>
-<p>If the App offers paid features, transactions are processed by Google Play under the Google Privacy Policy. The Owner does not receive your payment information; the App only receives from Google Play the purchase result needed to unlock the purchased features.</p>
-<h3>7. Children</h3>
-<p>The App is not directed to children under 13 and does not knowingly collect data from anyone, including children.</p>
-<h3>8. Changes to this policy</h3>
-<p>This policy may be updated. The new version takes effect on the date stated at the top and is published at the same address. If the App starts collecting data, this policy will be updated before that change takes effect.</p>
-<h3>9. Contact</h3>
+<p>When the App offers Premium features purchased through Google Play, transactions are processed by Google Play under the Google Privacy Policy. The Owner does not receive your payment information. The App receives from Google Play the purchase token and purchase state needed to unlock Premium. This information is stored only on your device and is not sent to the Owner. The Owner may see in Google Play Console the transaction reports provided by Google (for example order ID, country and amount) under Google's policies.</p>
+<h3>7. Android and Google Play crash reports</h3>
+<p>If you allow it, Android/Google Play may send anonymous crash reports to Google. The Owner may see aggregated reports in Google Play Console. The App does not send these reports itself.</p>
+<h3>8. When you contact the Owner</h3>
+<p>If you send an email, the Owner receives your email address, display name, the content and any attachments you provide (including device information if you include it), only to reply to you, support you and handle your request (for example a refund or a source code request). This data is not used for advertising and is not sold or shared, unless required by law. Emails are stored with the Owner's email provider (Google Gmail), which may be located outside your country.</p>
+<p>Legal basis: your consent when you choose to send an email, under Vietnam's Law on Personal Data Protection No. 91/2025/QH15 and Decree No. 356/2025/ND-CP. For users in the EU/EEA/United Kingdom, under the GDPR: Article 6(1)(b) where your request relates to your purchase, and Article 6(1)(f) (legitimate interest in replying to you) otherwise. The Owner is the data controller.</p>
+<h3>9. Security</h3>
+<p>The App's data is kept in the App's private storage on your device, protected by Android from other apps. The App does not send your personal data over the network. When the App offers Premium features purchased through Google Play, purchases are handled by Google Play. Emails you send to the Owner are kept in a mailbox protected by two-factor authentication and accessed only by the Owner.</p>
+<h3>10. Retention and deletion</h3>
 <ul>
-<li>GitHub: <a href="https://github.com/minhthongvgt/music-player-ffmpeg/issues">https://github.com/minhthongvgt/music-player-ffmpeg/issues</a></li>
-<li>Email: <a href="mailto:minhthongtinhyeu@gmail.com">minhthongtinhyeu@gmail.com</a></li>
+<li>Data on your device is kept until you clear the App's data in Android Settings or uninstall the App. The Premium purchase state (if any) can be restored from Google Play.</li>
+<li>Contact emails are kept for at most 24 months after the last exchange, or deleted earlier at your request, unless the law requires longer retention (for example records related to refunds).</li>
+</ul>
+<h3>11. Your rights</h3>
+<p>For data you send by email, you have the right to be informed, to access, correct and delete your data, to restrict or object to processing, to withdraw consent and to receive a copy of your data, under Vietnam's Law on Personal Data Protection No. 91/2025/QH15, Decree No. 356/2025/ND-CP and the GDPR (if you are in the EU/EEA/United Kingdom). Send requests to the email in section 14; the Owner will reply within the time required by law (under the GDPR, within one month). You have the right to lodge a complaint with the competent personal data protection authority in Vietnam (Ministry of Public Security) or with the data protection supervisory authority where you live or work (if you are in the EU/EEA/United Kingdom).</p>
+<h3>12. Children</h3>
+<p>The App is not directed to children (under 13 in the United States, under 16 under Vietnamese law and in some EU countries) and does not collect data from anyone, including children.</p>
+<h3>13. Changes to this policy</h3>
+<p>This policy may be updated. The new version takes effect on the date stated at the top and is published at the same address. Material changes will be announced in the App or in the Google Play release notes. If the App starts collecting data, this policy will be updated before that change takes effect.</p>
+<h3>14. Contact</h3>
+<ul>
+<li>Privacy contact: Nguyễn Minh Thông, email <a href="mailto:minhthongtinhyeu@gmail.com">minhthongtinhyeu@gmail.com</a></li>
+<li>GitHub (only for questions about the FFmpeg source code): <a href="https://github.com/minhthongvgt/music-player-ffmpeg/issues">https://github.com/minhthongvgt/music-player-ffmpeg/issues</a></li>
 </ul>
 </section>
 </main>
